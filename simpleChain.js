@@ -1,27 +1,36 @@
-/*======== Block Class =================
-Class with a constructor for Block
-======================================*/
+/* ===== Block Class ===================================
+|  Class with a constructor for block data model       |
+|  ====================================================*/
 
-class Block{
-	constructor(data) {
-     this.hash: "",
-     this.height: 0,
-     this.body: data,
-     this.time: 0,
-     this.previousblockhash: ""
-    }
+class Block {
+  constructor(data){
+    this.height = '';
+    this.timeStamp = '';
+    this.data = data;
+    this.previousHash = '0x';
+    this.hash = '';
+  }
 }
 
+/* ===== Blockchain ===================================
+|  Class with a constructor for blockchain data model  |
+|  with functions to support:                          |
+|     - createGenesisBlock()                           |
+|     - getLatestBlock()                               |
+|     - addBlock()                                     |
+|     - getBlock()                                     |
+|     - validateBlock()                                |
+|     - validateChain()                                |
+|  ====================================================*/
 
-/*======== Blockchain Class =================
-Class with a constructor for new Blockchain
-======================================*/
 class Blockchain{
-	constructor(){
-    	this.chain = [];
-    }
-	
+    constructor(){
+      // new chain array
+      this.chain = [];
+  }
+
+  // addBlock method
   addBlock(newBlock){
-    this.chain.push(newBlock);
-	}
+     this.chain.push(newBlock);
+  }
 }
