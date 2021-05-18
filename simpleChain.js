@@ -1,3 +1,7 @@
+/*======== Block Class =================
+Class with a constructor for Block
+======================================*/
+
 class Block{
 	constructor(data) {
      this.hash: "",
@@ -6,4 +10,18 @@ class Block{
      this.time: 0,
      this.previousblockhash: ""
     }
+}
+
+
+/*======== Blockchain Class =================
+Class with a constructor for new Blockchain
+======================================*/
+class Blockchain{
+	constructor(){
+    	this.chain = [];
+    }
+	
+  addBlock(newBlock){
+    this.chain.push(newBlock);
+	}
 }
